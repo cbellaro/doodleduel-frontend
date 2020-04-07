@@ -21,14 +21,16 @@ class Canvas extends React.Component {
                            height='500px'
                            tool={Tools.Pencil}
                            lineColor='black'
-                           lineWidth={2}/>
+                           lineWidth={2}
+                           backgroundColor='white'/>
                          : <div className="newCanvas"><SketchField width='500px'
                                       height='500px'
                                       tool={Tools.Pencil}
                                       lineColor='black'
-                                      lineWidth={2}/>
+                                      lineWidth={2}
+                                      backgroundColor='white'/>
                           </div>}
-             <button onClick={this.toggleCanvas}>Reset</button>
+             <button onClick={this.toggleCanvas}>Clear Canvas</button>
            </div>
         )
      }
