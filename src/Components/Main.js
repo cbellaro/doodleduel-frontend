@@ -20,18 +20,18 @@ class Main extends React.Component {
              })
              .then(
                (response) => {
-                 this.setState({word: response[(Math.floor(Math.random() * response.length))].draw})
+                 this.setState({randomWord: response[(Math.floor(Math.random() * response.length))].draw})
              }
          )}
     )}
   render () {
-  return (
-    <main>
-      <button onClick={this.generateRandomWord}>Generate a Random Word</button>
-      <div className="word"><h3>{this.state.word}</h3></div><h1 >{this.state.randomWord}</h1>
-    </main>
-      )
-    }
+    return (
+      <main>
+        <button onClick={this.generateRandomWord}>Generate Word</button>
+        <div className="word"><h3>{this.state.randomWord}</h3></div>
+      </main>
+    )
   }
+}
 
 export default Main
