@@ -31,14 +31,14 @@ class Main extends React.Component {
       this.setState({
         seconds: this.state.seconds,
         isOn: true
-    })
-    this.timer = setInterval(() => {
-      let newTime = this.state.seconds - 1
-      if(newTime >= 0){
-        this.setState({
-          seconds: newTime
-        })
-      } else{
+      })
+      this.timer = setInterval(() => {
+        let newTime = this.state.seconds - 1
+        if(newTime >= 0){
+          this.setState({
+            seconds: newTime
+          })
+        } else{
           clearInterval(this.timer)
           this.setState({
             isOn: false
@@ -50,27 +50,31 @@ class Main extends React.Component {
       clearInterval(this.timer)
       this.setState({
         isOn: false
-      })
+    })
     }
     resetTimer = () => {
-        this.setState({
-          seconds: this.state.maxTime
-      })
-    }
+      this.setState({
+        seconds: this.state.maxTime
+    })
+  }
   render () {
     return (
       <main>
-        <h1>{this.state.seconds<10 ?
-          `0${ this.state.seconds }`
-          : this.state.seconds}
-        </h1>
-        <button onClick={(event) => {
-          this.startTimer()
-          this.generateRandomWord()
-        }}>DRAW!</button>
-        <button onClick={this.stopTimer}>Stop Timer</button>
-        <button onClick={this.resetTimer}>Reset Timer</button>
-        <div className="word"><h3>{this.state.randomWord}</h3></div>
+        <div className="timer">
+          <h1>{this.state.seconds<10 ?
+            `0${ this.state.seconds }`
+            : this.state.seconds}
+            </h1>
+        </div>
+        <div className="buttons">
+          <img src="https://i.imgur.com/Yoo0TCy.gif" onClick={(event) => {
+            this.startTimer()
+            this.generateRandomWord()
+          }}/>
+          <img src="https://i.imgur.com/6b8JfpB.gif" onClick={this.stopTimer}/>
+          <img src="https://i.imgur.com/Id6G3Fv.gif" onClick={this.resetTimer}/>
+          <div className="word"><h3>{this.state.randomWord}</h3></div>
+          </div>
       </main>
     )
   }

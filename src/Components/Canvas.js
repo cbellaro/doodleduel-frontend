@@ -14,23 +14,25 @@ class Canvas extends React.Component {
     }
      render() {
         return (
-          <div>
-            <h3>Draw your word below:</h3>
-              { this.state.canvas === true ?
-              <SketchField width='500px'
-                           height='500px'
-                           tool={Tools.Pencil}
-                           lineColor='black'
-                           lineWidth={2}
-                           backgroundColor='white'/>
-                         : <div className="newCanvas"><SketchField width='500px'
-                                      height='500px'
-                                      tool={Tools.Pencil}
-                                      lineColor='black'
-                                      lineWidth={2}
-                                      backgroundColor='white'/>
-                          </div>}
-             <button onClick={this.toggleCanvas}>Clear Canvas</button>
+          <div className="canvas">
+            <div className="canvasText">
+              <h3>Draw your word below:</h3>
+            </div>
+              <img src="https://i.imgur.com/8QS5rpm.gif" onClick={this.toggleCanvas}/>
+                { this.state.canvas === true ?
+                <section className="newCanvas"><SketchField width='500px'
+                             height='500px'
+                             tool={Tools.Pencil}
+                             lineColor='black'
+                             lineWidth={2}
+                             backgroundColor='white'/></section>
+                           : <div className="newCanvas"><SketchField width='500px'
+                                        height='500px'
+                                        tool={Tools.Pencil}
+                                        lineColor='black'
+                                        lineWidth={2}
+                                        backgroundColor='white'/>
+                            </div>}
            </div>
         )
      }

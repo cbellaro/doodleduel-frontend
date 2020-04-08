@@ -23,8 +23,9 @@ class Scoreboard extends Component {
       return(
         <div className="scoreboard">
           <h2>Score: {this.state.scoreboard}</h2>
-          <button onClick={this.addPoint}>Add point</button>
-          <button onClick={this.resetScoreBoard}>Reset</button>
+          <img src="https://i.imgur.com/dMsCVI3.gif" onClick={this.addPoint}/>
+          <img src="https://i.imgur.com/VbJoJts.gif" onClick={this.resetScoreBoard}/>
+          <br/><br/>
         </div>
       )
     }

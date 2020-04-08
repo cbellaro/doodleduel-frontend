@@ -1,5 +1,61 @@
 body{
   background: url("https://i.imgur.com/ZhpCbHQ.png") repeat center center fixed;
-  background-size: 30%;
+  background-size: 50%;
   font-family: 'Sedgwick Ave Display', cursive;
+}
+
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scoreContainer{
+  display: flex;
+  justify-content: space-around;
+}
+
+.playerContainer{
+  display: inline-block;
+  background-color: white;
+  border: 10px black dashed;
+  width: 250px;
+  text-align: center;
+}
+
+.playerContainer img:hover{
+  cursor: pointer;
+}
+
+.timer{
+  text-align: center;
+}
+
+.buttons{
+  text-align: center;
+  margin-top: -6%;
+}
+
+.buttons:hover{
+  cursor: pointer;
+}
+
+.canvas{
+  margin-top: -1%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  text-align: center;
+}
+
+.canvasText{
+  background-color: white;
+  border: 10px black dashed;
+  width: 500px;
+}
+
+.newCanvas{
+  border: 10px black dashed;
+  width: 518px;
+  box-sizing: border-box;
 }
