@@ -20,19 +20,12 @@ class Canvas extends React.Component {
             </div>
               <img src="https://i.imgur.com/8QS5rpm.gif" onClick={this.toggleCanvas}/>
                 { this.state.canvas === true ?
-                <section className="newCanvas"><SketchField width='480px'
-                             height='480px'
-                             tool={Tools.Pencil}
-                             lineColor='black'
-                             lineWidth={2}
-                             backgroundColor='white'/></section>
-                           : <div className="newCanvas"><SketchField width='480px'
-                                        height='480px'
-                                        tool={Tools.Pencil}
-                                        lineColor='black'
-                                        lineWidth={2}
-                                        backgroundColor='white'/>
-                            </div>}
+                <section className="newCanvas">
+                  <SketchField width='480px' height='480px' tool={Tools.Pencil} lineColor='black' lineWidth={2} backgroundColor='white'/>
+                </section>
+                : <div className="newCanvas">
+                    <SketchField width='480px' height='480px' tool={Tools.Pencil} lineColor='black' lineWidth={2} backgroundColor='white'/>
+                  </div>}
            </div>
         )
      }
