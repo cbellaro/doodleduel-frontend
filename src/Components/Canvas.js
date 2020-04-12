@@ -1,14 +1,13 @@
 import React from 'react';
 import {SketchField, Tools} from 'react-sketch';
 
-// add tool options to state and create corresponding functions
-
 class Canvas extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
         canvas: true,
-        color: 'rgb(0,0,0)'
+        color: 'rgb(0,0,0)',
+        tool: Tools.Pencil
       }
       this.toggleCanvas = this.toggleCanvas.bind(this);
       this.colorBlack = this.colorBlack.bind(this);
@@ -21,6 +20,11 @@ class Canvas extends React.Component {
       this.colorBlue = this.colorBlue.bind(this);
       this.colorIndigo = this.colorIndigo.bind(this);
       this.colorViolet = this.colorViolet.bind(this);
+      this.toolPencil = this.toolPencil.bind(this);
+      this.toolLine = this.toolLine.bind(this);
+      this.toolRectangle = this.toolRectangle.bind(this);
+      this.toolCircle = this.toolCircle.bind(this);
+      this.toolSelect = this.toolSelect.bind(this);
     }
     toggleCanvas() {
       this.setState({canvas : !this.state.canvas})
@@ -55,6 +59,21 @@ class Canvas extends React.Component {
     colorViolet() {
       this.setState({color: 'rgb(148,0,211)'})
     }
+    toolPencil() {
+      this.setState({tool: Tools.Pencil})
+    }
+    toolLine() {
+      this.setState({tool: Tools.Line})
+    }
+    toolRectangle() {
+      this.setState({tool: Tools.Rectangle})
+    }
+    toolCircle() {
+      this.setState({tool: Tools.Circle})
+    }
+    toolSelect() {
+      this.setState({tool: Tools.Select})
+    }
      render() {
         return (
           <div className="canvas">
@@ -74,12 +93,19 @@ class Canvas extends React.Component {
                 <button className="indigo" onClick={this.colorIndigo}></button>
                 <button className="violet" onClick={this.colorViolet}></button>
               </div>
+              <div className="tools">
+                <button onClick={this.toolPencil}>pencil</button>
+                <button onClick={this.toolLine}>line</button>
+                <button onClick={this.toolRectangle}>rectangle</button>
+                <button onClick={this.toolCircle}>circle</button>
+                <button onClick={this.toolSelect}>select</button>
+              </div>
                 { this.state.canvas === true ?
                 <section className="newCanvas">
-                  <SketchField width='480px' height='480px' tool={Tools.Pencil} lineColor={this.state.color} lineWidth={2} backgroundColor='white'/>
+                  <SketchField width='480px' height='480px' tool={this.state.tool} lineColor={this.state.color} lineWidth={2} backgroundColor='white'/>
                 </section>
                 : <div className="newCanvas">
-                    <SketchField width='480px' height='480px' tool={Tools.Pencil} lineColor={this.state.color} lineWidth={2} backgroundColor='white'/>
+                    <SketchField width='480px' height='480px' tool={this.state.tool} lineColor={this.state.color} lineWidth={2} backgroundColor='white'/>
                   </div>}
            </div>
         )
