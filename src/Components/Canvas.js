@@ -94,11 +94,11 @@ class Canvas extends React.Component {
                 <button className="violet" onClick={this.colorViolet}></button>
               </div>
               <div className="tools">
-                <button onClick={this.toolPencil}>pencil</button>
-                <button onClick={this.toolLine}>line</button>
-                <button onClick={this.toolRectangle}>rectangle</button>
-                <button onClick={this.toolCircle}>circle</button>
-                <button onClick={this.toolSelect}>select</button>
+                <img src="https://i.imgur.com/JamfE3k.gif" onClick={this.toolPencil}/>
+                <img src="https://i.imgur.com/9UlrQn2.gif" onClick={this.toolLine}/>
+                <img src="https://i.imgur.com/x0SoAZD.gif" onClick={this.toolRectangle}/>&nbsp;
+                <img src="https://i.imgur.com/JZiVWnu.gif" onClick={this.toolCircle}/>
+                <img src="https://i.imgur.com/gIiwegV.gif" onClick={this.toolSelect}/>
               </div>
                 { this.state.canvas === true ?
                 <section className="newCanvas">

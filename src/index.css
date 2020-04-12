@@ -87,6 +87,10 @@ body{
   margin-top: 3%;
 }
 
+.tools{
+  margin-top: 4%;
+}
+
 .buttons:hover{
   cursor: pointer;
 }
