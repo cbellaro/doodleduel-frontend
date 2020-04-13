@@ -4,7 +4,7 @@ class Main extends React.Component {
   constructor (props) {
     super(props)
       this.state = {
-        baseURL: 'http://localhost:3000/words',
+        baseURL: 'https://doodle-duel-backend.herokuapp.com/words',
         randomWord: '',
         showWord: true,
         seconds: 60,
